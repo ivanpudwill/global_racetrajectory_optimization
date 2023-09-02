@@ -26,16 +26,16 @@ This script has to be executed to generate an optimal trajectory based on a give
 file_paths = {"veh_params_file": "racecar.ini"}
 
 # debug and plot options -----------------------------------------------------------------------------------------------
-debug = True                                    # print console messages
+debug = False                                    # print console messages
 plot_opts = {"mincurv_curv_lin": False,         # plot curv. linearization (original and solution based) (mincurv only)
              "raceline": True,                  # plot optimized path
              "imported_bounds": False,          # plot imported bounds (analyze difference to interpolated bounds)
              "raceline_curv": True,             # plot curvature profile of optimized path
              "racetraj_vel": True,              # plot velocity profile
-             "racetraj_vel_3d": False,          # plot 3D velocity profile above raceline
+             "racetraj_vel_3d": True,          # plot 3D velocity profile above raceline
              "racetraj_vel_3d_stepsize": 1.0,   # [m] vertical lines stepsize in 3D velocity profile plot
              "spline_normals": False,           # plot spline normals to check for crossings
-             "mintime_plots": False}            # plot states, controls, friction coeffs etc. (mintime only)
+             "mintime_plots": True}            # plot states, controls, friction coeffs etc. (mintime only)
 
 # select track file (including centerline coordinates + track widths) --------------------------------------------------
 # file_paths["track_name"] = "rounded_rectangle"                              # artificial track
@@ -111,7 +111,7 @@ with open(requirements_path, 'r') as fh:
         line = fh.readline()
 
 # check dependencies
-pkg_resources.require(dependencies)
+# pkg_resources.require(dependencies)
 
 # ----------------------------------------------------------------------------------------------------------------------
 # INITIALIZATION OF PATHS ----------------------------------------------------------------------------------------------
